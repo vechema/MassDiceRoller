@@ -102,3 +102,6 @@ dist
 
 # TernJS port file
 .tern-port
+
+# seems to be generated every "npm start"
+src/react-app-env.d.ts
