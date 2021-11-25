@@ -16,12 +16,16 @@ type AppState = {
   pipsToReroll: Set<number>,
 }
 
+// FUTURE USE to ease binding a bunch of member functions
+// eslint-disable-next-line
 class BaseComponent extends React.Component {
-  constructor(props: any, funcsToBind: Array<()=>void>) {
+  constructor(props: any, funcsToBind?: Array<()=>void>) {
     super(props);
 
-    for(let func of funcsToBind) {
-      this[func.name as keyof this] = (this[func.name as keyof this] as unknown as Function).bind(this);
+    if(funcsToBind !== undefined) {
+      for (let func of funcsToBind) {
+        this[func.name as keyof this] = (this[func.name as keyof this] as unknown as Function).bind(this);
+      }
     }
   }
 }
@@ -29,7 +33,7 @@ class BaseComponent extends React.Component {
 export default class App extends React.Component {
   state: AppState = {
     rng: new Random(MersenneTwister19937.autoSeed()),
-    diceQuantity: 4,
+    diceQuantity: 600,
     rolledDiceCounts: new Map<number,number>(),
     pipsToReroll: new Set<number>(),
   };
