@@ -1,6 +1,5 @@
 import React from 'react';
 
-import Jumbotron from 'react-bootstrap/Jumbotron';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -107,11 +106,9 @@ export default class App extends React.Component {
   render() {
     return (
       <Container className="p-3">
-        <Jumbotron>
-          <h1 className="header">
-            MassDiceRoller Skeleton
-          </h1>
-        </Jumbotron>
+        <h1 className="header">
+          MassDiceRoller
+        </h1>
         <Row>
           <Col>
             <input placeholder="Dice Quantity" value={this.state.diceQuantity} onChange={this.handleDiceQuantityChange} />
