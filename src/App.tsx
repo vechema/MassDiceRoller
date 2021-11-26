@@ -152,6 +152,9 @@ export default class App extends React.Component {
         <Row>
           <Button className="m-2" onClick={this.handleRerollClick}>Reroll</Button>
         </Row>
+        <Row>
+          <a href="https://github.com/KatyAHG/MassDiceRoller">GitHub repo</a>
+        </Row>
       </Container>
     );
   }
